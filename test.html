@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #box {
+        display: none;
+      }
+      #box:checked {
+        display: initial;
+      }
+      label {
+        display: block;
+        background: #dbdbd9;
+        width: 80px;
+        height: 80px;
+      }
+      #box:checked + label + .check {
+        background: pink;
+        color: green;
+      }
+      .check {
+        display: none;
+        width: 50px;
+        height: 50px;
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/form/submit" method="post">
+      <label for="box">Click here</label> 
+      <input type="checkbox" id="box" />
+      <div class="check">
+          <input type="checkbox" id="box" />
+      </div>
+
+    </form>
+  </body>
+</html>

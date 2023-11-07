@@ -432,8 +432,9 @@ footer {
     height: 69px;
 
     /* centrer les éléments dans la li*/
-    flex-wrap: wrap;
-    align-content: center;
+    /* flex-wrap: wrap;
+    align-content: center; */
+    align-items: center;
 }
 
 .menu--dish-type menu li label span {
@@ -459,19 +460,59 @@ footer {
     /* background-color: purple; */
 }
 
-#check-1 + .menu--dish-type menu li label:hover /*! doit être remplacé en active / click après*/ {
+/*! dure le temps de l'action, utilisation d'un :checked à la place*/
+/*
+.menu--dish-type menu li:active #check-1, .menu--dish-type menu li label:active #check-1 /*! doit être remplacé en active / click après aavoir validé avec hover {
     display: initial;
+    margin-left: -30px;
+}*/
+
+/** :checked*/
+/* Cacher la case à cocher */
+#check-1 {
+    display: none;
+    /** style arrondi sur la checkbox*/
+    /* -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff; */
+    /*position: relative; /* Required for the pseudo-element */
+    
+    /* background: red; */
 }
+.check {
+    display: none;
+}
+
+/* Styler l'élément "check-1" lorsque la case à cocher est cochée */
+#check-1:checked {
+    /* Ajoutez ici les styles CSS que vous souhaitez appliquer lorsque la case à cocher est cochée */
+    display: initial;
+    /* margin-left: -30px; */
+
+}
+
+#check-1:checked + label .check {
+    display: initial;
+    margin-left: -30px;
+}
+
+
 
 .info-and-price {
     display: flex;
     justify-content: space-between;
 }
 
-#check-1, #check-2, #check-3, #check-4, #check-5, #check-6, #check-7, #check-8, #check-9, #check-10 {
+ #check-2, #check-3, #check-4, #check-5, #check-6, #check-7, #check-8, #check-9, #check-10 {
     width: 17%;
     background-color: #99e2d0;
     display: none;
+    height: inherit;
+    border-radius: 0 15px 15px 0;
 }
 
 /** MEDIA QUERIES -- RESTAURANTS */
