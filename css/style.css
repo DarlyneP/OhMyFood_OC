@@ -376,7 +376,12 @@ footer {
 }
 
 .menu--bottom__contents {
-    background-color: red;
+    /** couleur pour les ajustements de dimensions*/
+    /* background-color: red; */
+
+    /** couleur normale*/
+    background-color: var(--main-background);
+
     /* width: 375px; */
     /* Utilisation de max-width pour éviter les problèmes de dimensionement sur petits écrans (320px) */
     max-width: 375px;
@@ -399,13 +404,44 @@ footer {
     max-width: 634px;
 }
 
+.menu--dish-type h3 {
+    margin-top: 40px;
+}
+
+.menu--dish-type h3::after {
+    content: "";
+    display: block;
+    width: 38px;
+    height: 2px;
+    background: var(--light-green);
+}
+
 .menu--dish-type menu li {
     list-style: none;
     display: flex;
     flex-direction: row;
-    background-color: greenyellow;
+
+    /** couleur pour les ajustements de dimensions*/
+    /* background-color: greenyellow; */
+
+    /** couleur normale*/
+    background-color: white;
+
     margin-top: 12px;
+    border-radius: 15px;
+    height: 69px;
+
+    /* centrer les éléments dans la li*/
+    flex-wrap: wrap;
+    align-content: center;
 }
+
+.menu--dish-type menu li label span {
+    /* mettre le prix sur la 2ème ligne*/
+    display: flex;
+    flex-wrap: wrap;
+    align-content: end;
+} 
 
 .menu--dish-type menu li label {
     display: flex;
@@ -413,15 +449,17 @@ footer {
     justify-content: space-between;
     /* width: 83.33%; */
     width: 100%;
+    padding: 0 15px;
     /*^ pour l'effet slide sur le click */
     flex-wrap: nowrap;
 }
 
-.menu--dish-type menu li label:hover {
+.menu--dish-type menu li:hover, .menu--dish-type menu li label:hover {
     cursor: pointer;
+    /* background-color: purple; */
 }
 
-#check-1 + .menu--dish-type menu li label:active {
+#check-1 + .menu--dish-type menu li label:hover /*! doit être remplacé en active / click après*/ {
     display: initial;
 }
 
