@@ -364,11 +364,15 @@ footer {
     /* width: 375px; */
     width: 100%;
     height: 275px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: -65px;
 }
 
 .menu--top__banner img {
     height: 100%;
     width: 100%;
+    z-index: 1;
 }
 
 .menu--bottom__contents {
@@ -380,13 +384,19 @@ footer {
     border-top-left-radius: 13px;
     border-top-right-radius: 13px;
     position: relative;
-    bottom: 65px;
+    z-index: 10;
 }
 
 .title--section { /*! ne marche pas avec le sélécteur "hgroup .title--section" */
     font-family: var(--titles);
     width: 100%;
     text-align: center;
+}
+
+.menu--section {
+    width: 95%;
+    margin: 0 auto;
+    max-width: 634px;
 }
 
 .menu--dish-type menu li {
@@ -429,16 +439,40 @@ footer {
 /** MEDIA QUERIES -- RESTAURANTS */
 /*^ for screens between 425px & 768px */
 @media screen and (min-width: 425px) {
+
+    /*! displacing this to an additionnal media query for a better rendering*/
+    /* .menu--bottom__contents {
+        width: 73.26%;
+        max-width: none;
+    } */
+
+    /* .menu--section {
+        margin: 0 auto;
+        width: 75%;
+        max-width: 605px;
+    } */
+
+}
+
+/** additionnal media query */
+@media screen and (min-width: 500px) and (max-width: 600px) {
+    /* .menu--bottom__contents {
+        width: 73.26%;
+        max-width: none;
+    } */
+
+    .menu--section {
+        margin: 0 auto;
+        /* width: 75%; */
+        max-width: 605px;
+    }
+}
+
+@media screen and (min-width: 500px) {
     .menu--bottom__contents {
         width: 73.26%;
         max-width: none;
     }
-
-    .menu--section {
-        margin: 0 auto;
-        width: 75%;
-    }
-
 }
 
 @media screen and (min-width: 768px) {
@@ -453,7 +487,8 @@ footer {
     
     .menu--dish-type menu li {
         /* width: 57.25%; */
-        max-width: 605px;
+        /* max-width: 605px; */
+        width: 100%;
     }
 
     .menu--bottom__contents {
