@@ -1,0 +1,462 @@
+/** RESET CSS*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/** VARIABLES */
+body {
+    font-family: var(--text);
+
+    /* couleurs */
+    --purple: #9356dc;
+    --light-purple: #db6eda;
+    --dark-green: #028766;
+    --light-green: #99e2d0;
+    --dark-blue: #003a68;
+    --light-blue: #89c9fa;
+
+    --dk-background: #eaeaea;
+    --main-background: #f6f6f6;
+
+    /* fonts */
+    --text: 'Roboto', sans-serif;
+    --titles: 'Shrikhand', serif;
+
+    /* dimensions */
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/** ICONS */
+.fa-location-dot {
+    color: #353535;
+}
+
+.fa-handshake-angle, .fa-utensils, .fa-circle-check {
+    color: #ffffff;
+}
+
+.fa-arrow-left {
+    position: absolute;
+    color: black;
+    top: 25px;
+    left: 17px;
+}
+
+/** PAGE */
+
+header {
+    width: 100%;
+}
+
+header .logo {
+    width: 100%;
+    height: 63px;
+    text-align: center;
+}
+
+header img {
+    width: 197px;
+    padding-top: 15px;
+}
+
+.location {
+    padding: 20px 0;
+}
+
+.location, .restaurants {
+    background-color: var(--dk-background);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.info {
+    background-color: var(--main-background);
+}
+
+.info--title {
+    padding-top: 35px;
+    padding-bottom: 20px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28.13px;
+}
+
+.info--description {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21.09px;
+}
+
+.info button {
+    border: none;
+    height: 50px;
+    width: 218px;
+    border-radius: 30px;
+    background: linear-gradient(360deg, var(--purple), var(--light-purple));
+    margin-top: 35px;
+    margin-bottom: 45px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18.75px;
+    color: #fff;
+}
+
+.info, .fonctionnement {
+    text-align: center;
+
+}
+
+.fonctionnement {
+    padding-bottom: 40px;
+}
+
+.fonctionnement h2, .restaurants h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28.13px;
+}
+
+.fonctionnement h2 {
+    text-align: initial;
+    /* margin-left: 15px; */
+    margin: 40px 0 0 15px;
+}
+
+.step .step--number {
+    /* background: linear-gradient(360deg, var(--purple), var(--light-purple)); */
+    background-color: var(--purple);
+    border-radius: 50%;
+    color: #fff;
+    /* "the display inline property prevents width & height from having an effect"
+    width: 15px;
+    height: 15px;
+    so I replaced them with a padding : */
+    padding: 3px 8px;
+    position: absolute;
+    left: -10px;
+}
+
+.step p {
+    background-color: var(--dk-background);
+    padding: 25px;
+    margin: 20px;
+    border-radius: 10px;
+    position: relative;
+
+    /* box-shadow instructions : x=0 , y=4, blur=15, spread=0, color=#000000 15 . */
+    box-shadow: 0px 4px 15px #0000002a;
+}
+
+.restaurants {
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.resto--title {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    margin-left: 15px;
+}
+
+.resto--cards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+.restaurants a {
+    /* width: 93%; */
+    width: 340px;
+    text-decoration: none;
+    color: black;
+    align-self: center;
+    height: 251px;
+    padding-bottom: 18px;
+}
+
+.resto-card {
+    background-color: var(--main-background);
+    border-radius: 9px;
+    height: 251px;
+    width: 100%;
+}
+
+.resto-card img {
+    width: 100%;
+    height: 70%;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+
+.resto-card__bottom {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+}
+
+.resto-card__bottom .resto-card__details {
+    width: 80%;
+    padding: 20px;
+}
+
+.resto-card__details h3 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21.09px;
+}
+
+.resto-card__details p {
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 19.92px;
+}
+
+.resto-card__bottom .resto-card__like {
+    width: 20%;
+}
+
+.resto-card__like svg {
+    width: 35px;
+    height: 35px;
+
+    padding-top: 16px;
+    /* padding-top: 10px; */
+    /* padding: 19px; */
+}
+
+footer {
+    background-color: #353535;
+    color: #fff;
+}
+
+/** MEDIA QUERIES -- HOMEPAGE */
+
+/*^ for screens between 425px & 768px */
+@media screen and (min-width: 425px) {
+
+    .fonctionnement, .restaurants {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fonctionnement h2 {
+        margin: 40px 216px 0 0px;
+
+    }
+
+    .steps {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    .step {
+        width: 400px;
+    }
+
+    /*.restaurants h2*/ .resto--title {
+        margin: 50px 230px 25px 0px;
+        /* margin-right: 216px; */
+    }
+
+    .restaurants a {
+        width: 340px;
+    }
+}
+
+/*^ for screens above 768px -- or 937?(desktop) */
+@media screen and (min-width: 937px) {
+
+    .fonctionnement h2 {
+        margin: 0;
+    }
+    
+    .fonctionnement h2, .steps {
+        width: 100%;
+    }
+
+    .steps {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .step {
+        width: 29.8%;
+    }
+
+    .restaurants {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .resto--title {
+        margin: 50px 0px 25px 129px;
+        align-self: flex-start;
+    }
+
+    .resto--cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/** RESTAURANTS */
+.menu--top__banner {
+    /* width: 375px; */
+    width: 100%;
+    height: 275px;
+}
+
+.menu--top__banner img {
+    height: 100%;
+    width: 100%;
+}
+
+.menu--bottom__contents {
+    background-color: red;
+    /* width: 375px; */
+    /* Utilisation de max-width pour éviter les problèmes de dimensionement sur petits écrans (320px) */
+    max-width: 375px;
+    margin: 0 auto;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    position: relative;
+    bottom: 65px;
+}
+
+.title--section { /*! ne marche pas avec le sélécteur "hgroup .title--section" */
+    font-family: var(--titles);
+    width: 100%;
+    text-align: center;
+}
+
+.menu--dish-type menu li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    background-color: greenyellow;
+    margin-top: 12px;
+}
+
+.menu--dish-type menu li label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* width: 83.33%; */
+    width: 100%;
+    /*^ pour l'effet slide sur le click */
+    flex-wrap: nowrap;
+}
+
+.menu--dish-type menu li label:hover {
+    cursor: pointer;
+}
+
+#check-1 + .menu--dish-type menu li label:active {
+    display: initial;
+}
+
+.info-and-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+#check-1, #check-2, #check-3, #check-4, #check-5, #check-6, #check-7, #check-8, #check-9, #check-10 {
+    width: 17%;
+    background-color: #99e2d0;
+    display: none;
+}
+
+/** MEDIA QUERIES -- RESTAURANTS */
+/*^ for screens between 425px & 768px */
+@media screen and (min-width: 425px) {
+    .menu--bottom__contents {
+        width: 73.26%;
+        max-width: none;
+    }
+
+    .menu--section {
+        margin: 0 auto;
+        width: 75%;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    /* .menu--section {
+        margin: 0 auto;
+        width: 75%;
+    } */
+}
+
+/*^ for screens above 768px -- or 937?(desktop) */
+@media screen and (min-width: 937px) {
+    
+    .menu--dish-type menu li {
+        /* width: 57.25%; */
+        max-width: 605px;
+    }
+
+    .menu--bottom__contents {
+        max-width: 1055px;
+    }
+}
