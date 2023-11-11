@@ -84,6 +84,14 @@ body {
     color: #ffffff;
 }
 
+.fa-location-dot {
+    margin-right: 17px;
+}
+
+.fa-handshake-angle, .fa-utensils {
+    margin-right: 10px;
+}
+
 .fa-circle-check {
     display: none;
 }
@@ -409,6 +417,9 @@ footer {
     font-family: var(--titles);
     width: 100%;
     text-align: center;
+    padding-top: 32px;
+    font-size: 28px;
+    line-height: 40.82px;
 }
 
 .menu--section {
@@ -534,7 +545,7 @@ footer {
 {
     /* content: '<i class="fa-solid fa-circle-check"></i>'; */
     content: url(../images/icons/check.svg);
-    transition: content 3s;
+    /* transition: content 3s; */
     width: 100%;
     height: 100%;
     /* margin: 40%; */
@@ -554,9 +565,9 @@ footer {
     margin-left: -30px;
 } */
 
-
-.menu--dish-type menu li label:hover + .fa-circle-check {
-    display: initial;
+.menu--order {
+    width: 100%;
+    text-align: center;
 }
 
 .menu--section button {
@@ -568,6 +579,10 @@ footer {
     color: white;
     font-family: var(--text);
     font-weight: 500;
+}
+
+.menu--section button:hover {
+    cursor: pointer;
 }
 
 /** MEDIA QUERIES -- RESTAURANTS */
@@ -618,6 +633,10 @@ footer {
 
 /*^ for screens above 768px -- or 937?(desktop) */
 @media screen and (min-width: 937px) {
+
+    .title--section {
+        padding-top: 51px;
+    }
     
     .menu--dish-type menu li {
         /* width: 57.25%; */
@@ -627,5 +646,18 @@ footer {
 
     .menu--bottom__contents {
         max-width: 1055px;
+    }
+
+    footer ul {
+        display: flex;
+        padding: 30px 25px;
+    }
+
+    footer ul li {
+        margin-right: 10px;
+    }
+
+    footer ul li:nth-of-type(2), footer ul li:nth-of-type(4) {
+        margin-right: 45px;
     }
 }
