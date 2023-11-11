@@ -84,6 +84,10 @@ body {
     color: #ffffff;
 }
 
+.fa-circle-check {
+    display: none;
+}
+
 .fa-arrow-left {
     position: absolute;
     color: black;
@@ -469,48 +473,90 @@ footer {
     /* background-color: purple; */
 }
 
-/*! :active dure le temps de l'action, remplacement de :active par :focus à la place (:checked inneficace ici) */
-/*! edit => :focus ne fonctionne pas, essai avec :target — en plus :focus ne peut être désactivé qu'en cliquant à côté et non en recliquant sur l'élément */
-/*! edit => :target ne fonctionne pas */
-/*^ On peut enlever "menu--dish-type menu li:target + #check-1" dans la css rule suivante en mettant un height de 100% & un align-self center sur le label ainsi qu'un padding-bottom de 19px sur le span du prix.*/
-/* .menu--dish-type menu li:target + #check-1, .menu--dish-type menu li label:target + #check-1 /*! doit être remplacé en active / click après aavoir validé avec hover {
-    display: initial;
-    margin-left: -30px;
-} */
-
-/** :checked*/
-
-/*! to delete after */
-/* .check {
-    display: none;
-} */
-
-/* Styler l'élément "check-1" lorsque la case à cocher est cochée */
-#check-1:checked {
-    /* Ajoutez ici les styles CSS que vous souhaitez appliquer lorsque la case à cocher est cochée */
-    display: initial;
-    /* margin-left: -30px; */
-
-}
-
-#check-1:checked + label .check {
-    display: initial;
-    margin-left: -30px;
-}
-
-
-
 .info-and-price {
     display: flex;
     justify-content: space-between;
 }
 
- #check-1, #check-2, #check-3, #check-4, #check-5, #check-6, #check-7, #check-8, #check-9, #check-10 {
+#check-1, #check-2, #check-3, #check-4, #check-5, #check-6, #check-7, #check-8, #check-9, #check-10 {
+   /* width: 17%; */
+   width: 0;
+   background-color: #99e2d0;
+   /* display: none; */
+   height: inherit;
+   border-radius: 0 15px 15px 0;
+   transition: width 3s;
+   text-align: center;
+   position: relative;
+}
+
+/*! :active dure le temps de l'action, remplacement de :active par :focus à la place (:checked inneficace ici) */
+/*! edit => :focus ne fonctionne pas, essai avec :target — en plus :focus ne peut être désactivé qu'en cliquant à côté et non en recliquant sur l'élément */
+/*! edit => :target ne fonctionne pas */
+/*^ On peut enlever "menu--dish-type menu li:target + #check-1" dans la css rule suivante en mettant un height de 100% & un align-self center sur le label ainsi qu'un padding-bottom de 19px sur le span du prix.*/
+.menu--dish-type menu li:hover + #check-1, .menu--dish-type menu li label:hover + #check-1,
+.menu--dish-type menu li:hover + #check-2, .menu--dish-type menu li label:hover + #check-2,
+.menu--dish-type menu li:hover + #check-3, .menu--dish-type menu li label:hover + #check-3,
+.menu--dish-type menu li:hover + #check-4, .menu--dish-type menu li label:hover + #check-4,
+.menu--dish-type menu li:hover + #check-5, .menu--dish-type menu li label:hover + #check-5,
+.menu--dish-type menu li:hover + #check-6, .menu--dish-type menu li label:hover + #check-6,
+.menu--dish-type menu li:hover + #check-7, .menu--dish-type menu li label:hover + #check-7,
+.menu--dish-type menu li:hover + #check-8, .menu--dish-type menu li label:hover + #check-8,
+.menu--dish-type menu li:hover + #check-9, .menu--dish-type menu li label:hover + #check-9,
+.menu--dish-type menu li:hover + #check-10, .menu--dish-type menu li label:hover + #check-10
+/*! doit être remplacé en active / click après avoir validé avec hover */ 
+{
+    display: initial;
+    /* margin-left: -30px; */
     width: 17%;
-    background-color: #99e2d0;
-    display: none;
-    height: inherit;
-    border-radius: 0 15px 15px 0;
+    /* content: '<i class="fa-solid fa-circle-check"></i>'; */
+    content: '\<i class="fa-solid fa-circle-check"></i>';
+    /* content: 'ok'; */
+}
+
+#check-1::before {
+    /* width: 100%;
+    height: 100%;
+    margin: 40%; */
+    /* margin-top: 50%; */
+}
+
+.menu--dish-type menu li label:hover + #check-1::before, 
+.menu--dish-type menu li label:hover + #check-2::before, 
+.menu--dish-type menu li label:hover + #check-3::before,
+.menu--dish-type menu li label:hover + #check-4::before,
+.menu--dish-type menu li label:hover + #check-5::before,
+.menu--dish-type menu li label:hover + #check-6::before,
+.menu--dish-type menu li label:hover + #check-7::before,
+.menu--dish-type menu li label:hover + #check-8::before,
+.menu--dish-type menu li label:hover + #check-9::before,
+.menu--dish-type menu li label:hover + #check-10::before
+{
+    /* content: '<i class="fa-solid fa-circle-check"></i>'; */
+    content: url(../images/icons/check.svg);
+    transition: content 3s;
+    width: 100%;
+    height: 100%;
+    /* margin: 40%; */
+    position: absolute;
+    top: 40%;
+    left: 0%; /*! for some strange reason 0% is the only way to center, else it won't go left enough or it will even go right even though this doesn't make sense at all.*/
+    /* left: 70%; */
+    /* transform: translateY(-50%); */
+  
+    /* align-self: center; */
+    /* padding: 5px;
+    margin: 10px; */
+}
+
+/* #check-1:checked + label .check {
+    display: initial;
+    margin-left: -30px;
+} */
+
+
+.menu--dish-type menu li label:hover + .fa-circle-check {
+    display: initial;
 }
 
 .menu--section button {
