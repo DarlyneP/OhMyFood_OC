@@ -357,6 +357,15 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    footer {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    footer ul {
+        display: inline;
+    }
 }
 
 /** RESTAURANTS */
@@ -460,32 +469,21 @@ footer {
     /* background-color: purple; */
 }
 
-/*! dure le temps de l'action, utilisation d'un :checked à la place*/
-/*
-.menu--dish-type menu li:active #check-1, .menu--dish-type menu li label:active #check-1 /*! doit être remplacé en active / click après aavoir validé avec hover {
+/*! :active dure le temps de l'action, remplacement de :active par :focus à la place (:checked inneficace ici) */
+/*! edit => :focus ne fonctionne pas, essai avec :target — en plus :focus ne peut être désactivé qu'en cliquant à côté et non en recliquant sur l'élément */
+/*! edit => :target ne fonctionne pas */
+/*^ On peut enlever "menu--dish-type menu li:target + #check-1" dans la css rule suivante en mettant un height de 100% & un align-self center sur le label ainsi qu'un padding-bottom de 19px sur le span du prix.*/
+/* .menu--dish-type menu li:target + #check-1, .menu--dish-type menu li label:target + #check-1 /*! doit être remplacé en active / click après aavoir validé avec hover {
     display: initial;
     margin-left: -30px;
-}*/
+} */
 
 /** :checked*/
-/* Cacher la case à cocher */
-#check-1 {
+
+/*! to delete after */
+/* .check {
     display: none;
-    /** style arrondi sur la checkbox*/
-    /* -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 2px solid #fff; */
-    /*position: relative; /* Required for the pseudo-element */
-    
-    /* background: red; */
-}
-.check {
-    display: none;
-}
+} */
 
 /* Styler l'élément "check-1" lorsque la case à cocher est cochée */
 #check-1:checked {
@@ -507,12 +505,23 @@ footer {
     justify-content: space-between;
 }
 
- #check-2, #check-3, #check-4, #check-5, #check-6, #check-7, #check-8, #check-9, #check-10 {
+ #check-1, #check-2, #check-3, #check-4, #check-5, #check-6, #check-7, #check-8, #check-9, #check-10 {
     width: 17%;
     background-color: #99e2d0;
     display: none;
     height: inherit;
     border-radius: 0 15px 15px 0;
+}
+
+.menu--section button {
+    background: linear-gradient(360deg, var(--purple), var(--light-purple));
+    border-radius: 34px;
+    border: none;
+    padding: 15px 35px;
+    margin: 40px;
+    color: white;
+    font-family: var(--text);
+    font-weight: 500;
 }
 
 /** MEDIA QUERIES -- RESTAURANTS */

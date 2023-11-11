@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+  <style>
+    /* styles.css */
+
+    /* Hide the checkbox */
+    input[type="checkbox"] {
+    display: none;
+    }
+
+    /* Style the custom checkbox */
+    .check {
+        width: 50px;
+        height: 50px;
+        background: yellow;
+        border-radius: 0 15px 15px 0;
+        transition: margin-left 5s;
+    }
+
+    /* Style the label to look like a clickable element */
+    .label {
+        display: inline-block;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    /* Use the :checked pseudo-class to style the custom checkbox when the checkbox is checked */
+    input[type="checkbox"]:checked + .label .check {
+        margin-left: -35px;
+    }
+
+    /* Style the custom checkbox */
+    .check input[type="checkbox"] {
+        display: block;
+        width: 50%;
+        height: 50%;
+        background: white;
+        border-radius: 50%;
+    }
+
+    /* Style the checkmark inside the custom checkbox */
+    .check input[type="checkbox"]:checked::before {
+    content: '';
+    display: block;
+    width: 70%;
+    height: 70%;
+    background: green;
+    border-radius: 50%;
+    margin: 15%;
+    }
+
+  </style>
+</head>
+<body>
+    <label for="check-1" class="label">
+      <div class="dish-info">
+        <h4>Tartare de thon</h4>
+        <p>Assaisonné au yuzu</p>
+      </div>
+      <span>25€</span>
+    </label>
+    <div class="check">
+        <input type="checkbox" id="check-1">
+    </div>
+</body>
+</html>

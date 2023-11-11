@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+  <style>
+        /* styles.css */
+
+        /* styles.css */
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Style the custom checkbox */
+.check {
+  display: none; /* Initially hide the "check" element */
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+/* Style the green checkmark */
+.check::before {
+  content: "\2713"; /* Unicode checkmark symbol */
+  font-size: 24px;
+  color: green;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Style the custom slider */
+.check-slider {
+  width: 50px;
+  height: 50px;
+  background: yellow;
+  border-radius: 0 50px 50px 0;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: -35px;
+  transition: left 5s linear;
+}
+
+/* Show the "check" element when the checkbox is checked */
+input[type="checkbox"]:checked + .check {
+  display: inline-block;
+}
+
+/* Slide the slider when the checkbox is checked */
+input[type="checkbox"]:checked + .check .check-slider {
+  left: 0;
+}
+
+
+  </style>
+</head>
+<body>
+  <label for="check-1">
+    <div class="dish-info">
+      <h4>Tartare de thon</h4>
+      <p>Assaisonné au yuzu</p>
+    </div>
+    <span>25€</span>
+  </label>
+  <div class="check">
+    <input type="checkbox" id="check-1">
+    <div class="check-slider"></div>
+  </div>
+</body>
+</html>
