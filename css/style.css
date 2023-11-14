@@ -103,6 +103,10 @@ body {
     left: 17px;
 }
 
+.fa-mobile-screen-button, .fa-store, .fa-list {
+    padding-right: 20px;
+}
+
 /** PAGE */
 
 header {
@@ -230,8 +234,8 @@ header img {
 }
 
 .restaurants a {
-    /* width: 93%; */
-    width: 340px;
+    width: 93%;
+    /* width: 340px; */
     text-decoration: none;
     color: black;
     align-self: center;
@@ -278,17 +282,79 @@ header img {
 }
 
 .resto-card__bottom .resto-card__like {
-    width: 20%;
+    margin-right: 5%;
+    width: 9%;
+    height: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.resto-card__like svg {
-    width: 35px;
-    height: 35px;
+/** heart*/
 
-    padding-top: 16px;
-    /* padding-top: 10px; */
-    /* padding: 19px; */
+.heart--center-bottom {
+    position: relative;
+    top: 6px;
+    left: 0px;
+    width: 25%;
+    height: 35%;
+    transform: rotate(-45deg);
+    border-bottom: solid 2px black;
+    border-left: solid 2px black;
+    z-index: 10;
+
+    /* css check rule */
+    /* background-color: red; */
 }
+
+.heart--top-left, .heart--top-right {
+    width: 50%;
+    height: 50%;
+
+    /* css check rule */
+    /* background-color: red; */
+}
+
+.heart--top-right {
+    transform: rotate(-136deg);
+    width: 27%;
+    position: relative;
+    top: 22px;
+    right: 5px;
+    border-right: solid 2px black;
+    border-left: solid 2px black;
+    border-bottom: solid 2px black;
+    border-bottom-left-radius: 54%;
+    border-bottom-right-radius: 54%;
+    border-top-right-radius: 70%;
+    z-index: 5;
+}
+
+.heart--top-left {
+    transform: rotate(-226deg);
+    width: 25%;
+    position: relative;
+    top: 22px;
+    left: 5px;
+    border-left: solid 2px black;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    border-bottom-left-radius: 54%;
+    border-bottom-right-radius: 54%;
+    border-top-left-radius: 75%;
+    z-index: 5;
+    background-color: white;
+    /* css check rule */
+    /* background-color: blue; */
+}
+
+.resto-card__bottom .resto-card__like:hover .heart--center-bottom, .resto-card__bottom .resto-card__like:hover .heart--top-left, .resto-card__bottom .resto-card__like:hover .heart--top-right {
+    background-color: #9356dc;
+}
+
+/**/
 
 footer {
     background-color: #353535;
@@ -307,7 +373,7 @@ footer {
     }
 
     .fonctionnement h2 {
-        margin: 40px 216px 0 0px;
+        margin: 50px 216px 0 0px;
 
     }
 
@@ -336,8 +402,14 @@ footer {
 /*^ for screens above 768px -- or 937?(desktop) */
 @media screen and (min-width: 937px) {
 
+    .fonctionnement {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding-top: 50px;
+    }
+
     .fonctionnement h2 {
-        margin: 0;
+        margin: 0; /** On enlève la margin afin de pouvoir centrer, et on met un padding-top sur fonctionnement à la place */
     }
     
     .fonctionnement h2, .steps {
@@ -350,17 +422,38 @@ footer {
     }
 
     .step {
-        width: 29.8%;
+        width: 33%;
+        /* max-width: 322px; */
     }
 
     .restaurants {
         display: flex;
         flex-direction: column;
     }
+    
+    .restaurants--wrapper {
+        margin: 0 auto;
+        max-width: 1080px;
+        /* background-color: var(--dk-background); */
+    }
 
     .resto--title {
-        margin: 50px 0px 25px 129px;
+        margin: 50px 0px 25px 0px;
         align-self: flex-start;
+    }
+
+    .restaurants a {
+        width: 44.37%;
+        max-width: 490px;
+        margin-bottom: 50px;
+    }
+
+    .restaurants a:nth-of-type(odd) {
+        margin-right: 100px;
+    }
+
+    .resto--cards {
+        max-width: 1080px;
     }
 
     .resto--cards {
@@ -633,6 +726,8 @@ footer {
 
 /*^ for screens above 768px -- or 937?(desktop) */
 @media screen and (min-width: 937px) {
+
+
 
     .title--section {
         padding-top: 51px;
