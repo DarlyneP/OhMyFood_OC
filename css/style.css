@@ -430,9 +430,9 @@ footer {
     height: 100vh;
     z-index: 100;
     background: linear-gradient(var(--purple), var(--light-purple));
-    transition: height 6s;
+    /* transition: height 6s; */
       /* This timing applies on the way OUT */
-    transition-timing-function: ease;
+    /* transition-timing-function: ease; */
 
     /* Quick on the way out */
     /* transition: 0.2s; */
@@ -442,10 +442,28 @@ footer {
 }
 
 /** LOADER */
+/* fonctionne seulement si la souris est sur la page, autrement le loader revient àl'écran*/
 /* html:hover .loader {
     height: 0vh;
 } */
+html .loader {
+    animation-duration: 6s;
+    animation-name: sliding-vertically;
+    animation-fill-mode: forwards; /**empêche l'animation de s'annuler*/
+}
 
+@keyframes sliding-vertically {
+    from {
+      height: 100vh;
+      /* width: 300%; */
+    }
+  
+    to {
+      height: 0vh;
+      display: none;
+      /* width: 100%; */
+    }
+  }
 
 
 /** MEDIA QUERIES -- HOMEPAGE */

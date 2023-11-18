@@ -19,4 +19,6 @@ Sinon superposer 2 icones & utiliser l'oapcité
 [Lien](https://bobbyhadz.com/blog/css-hover-multiple-elements) 
 
 ## Loader screen, tips
-[Manières de faire défiler l'écran](https://css-tricks.com/ease-out-in-ease-in-out/)
+- [Manières de faire défiler l'écran](https://css-tricks.com/ease-out-in-ease-in-out/)
+- [Animation-name](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name)
+- [Maintenir les animations sans qu'elles s'annulent](https://stackoverflow.com/questions/18457462/css3-animation-keep-reverting-to-original-state)
