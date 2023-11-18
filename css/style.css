@@ -703,7 +703,7 @@ html .loader {
 /*! edit => :focus ne fonctionne pas, essai avec :target — en plus :focus ne peut être désactivé qu'en cliquant à côté et non en recliquant sur l'élément */
 /*! edit => :target ne fonctionne pas */
 /*^ On peut enlever "menu--dish-type menu li:target + #check-1" dans la css rule suivante en mettant un height de 100% & un align-self center sur le label ainsi qu'un padding-bottom de 19px sur le span du prix.*/
-.menu--dish-type menu li:hover + #check-1, .menu--dish-type menu li label:hover + #check-1,
+/*.menu--dish-type menu li:hover + #check-1, .menu--dish-type menu li label:hover + #check-1,*/
 .menu--dish-type menu li:hover + #check-2, .menu--dish-type menu li label:hover + #check-2,
 .menu--dish-type menu li:hover + #check-3, .menu--dish-type menu li label:hover + #check-3,
 .menu--dish-type menu li:hover + #check-4, .menu--dish-type menu li label:hover + #check-4,
@@ -722,6 +722,23 @@ html .loader {
     content: '\<i class="fa-solid fa-circle-check"></i>';
     /* content: 'ok'; */
 }
+
+/***/
+.menu--dish-type menu li:focus-within + #check-1, .menu--dish-type menu li label:focus-within + #check-1 {
+    animation-name: slidein;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes slidein {
+    from {
+        width: 0%;
+    }
+    
+    to {
+        width: 17%;
+    }
+}
+/***/
 
 #check-1::before {
     /* width: 100%;
