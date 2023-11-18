@@ -13,3 +13,10 @@ La longueur ne peut pas être changée. Il faut utiliser l'élément `::after`
 
 ## Tips : faire un coeur en css
 [Lien](https://css-tricks.com/hearts-in-html-and-css/)
+Sinon superposer 2 icones & utiliser l'oapcité
+
+## Appliquer un hover sur plusieurs éléments en simultané
+[Lien](https://bobbyhadz.com/blog/css-hover-multiple-elements) 
+
+## Loader screen, tips
+[Manières de faire défiler l'écran](https://css-tricks.com/ease-out-in-ease-in-out/)

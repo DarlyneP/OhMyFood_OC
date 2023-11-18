@@ -354,12 +354,99 @@ header img {
     background-color: #9356dc;
 }
 
+/*
+Possible changes for the heart
+
+.heart--center-bottom {
+    padding: 0px;
+    position: relative;
+    top: 9px;
+    left: 0.1px;
+    width: 33%;
+    height: 37%;
+    transform: rotate(-45deg);
+    border-bottom: solid 2px black;
+    border-left: solid 2px black;
+    z-index: 10;
+    border-bottom-right-radius: 95%;
+    border-top-left-radius: 90%;
+    border-top-left: blue;
+    * background-color: red; *
+}
+
+.heart--top-right {
+    transform: rotate(-149deg);
+    width: 26%;
+    position: relative;
+    top: 24px;
+    right: 5px;
+    border-right: solid 2px black;
+    border-left: solid 2px black;
+    border-bottom: solid 2px black;
+    border-bottom-left-radius: 54%;
+    border-bottom-right-radius: 54%;
+    border-top-right-radius: 78%;
+    z-index: 5;
+}
+
+.heart--top-left {
+    transform: rotate(-214deg);
+    width: 26%;
+    position: relative;
+    top: 24px;
+    left: 5px;
+    border-left: solid 2px black;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    border-bottom-left-radius: 54%;
+    border-bottom-right-radius: 54%;
+    border-top-left-radius: 75%;
+    z-index: 5;
+    background-color: white;
+    * background-color: blue; *
+}
+
+
+*/
+
 /**/
 
 footer {
     background-color: #353535;
     color: #fff;
 }
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.loader {
+    /* position: relative; */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background: linear-gradient(var(--purple), var(--light-purple));
+    transition: height 6s;
+      /* This timing applies on the way OUT */
+    transition-timing-function: ease;
+
+    /* Quick on the way out */
+    /* transition: 0.2s; */
+
+  /* Hide thing by pushing it outside by default */
+  /* transform: translateX(130%); */
+}
+
+/** LOADER */
+/* html:hover .loader {
+    height: 0vh;
+} */
+
+
 
 /** MEDIA QUERIES -- HOMEPAGE */
 
