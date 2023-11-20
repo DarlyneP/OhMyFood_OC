@@ -445,6 +445,13 @@ footer ul li:first-of-type, footer ul li:nth-of-type(2) {
     font-weight: 500;
 }
 
+footer ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    line-height: 18.75px;
+}
+
 .footer--title {
     font-family: var(--titles);
     font-weight: 400;
@@ -724,7 +731,7 @@ html .loader {
     25%  {background-color: rgb(246, 246, 246, 0.75);}
     50%  {background-color: rgb(246, 246, 246, 0.5);}
     75%  {background-color: rgb(246, 246, 246, 0.25);}
-    100% {background-color: rgb(246, 246, 246, 0)}
+    100% {background-color: rgb(246, 246, 246, 0); display: none;}
 }
 .menu--dish-type__curtain2 {
     animation-name: curtain2;
@@ -739,7 +746,7 @@ html .loader {
     25%  {background-color: rgb(246, 246, 246, 0.75);}
     50%  {background-color: rgb(246, 246, 246, 0.5);}
     75%  {background-color: rgb(246, 246, 246, 0.25);}
-    100% {background-color: rgb(246, 246, 246, 0)}
+    100% {background-color: rgb(246, 246, 246, 0); display: none;}
 }
 
 .menu--dish-type__curtain3 {
@@ -754,7 +761,7 @@ html .loader {
     25%  {background-color: rgb(246, 246, 246, 0.75);}
     50%  {background-color: rgb(246, 246, 246, 0.5);}
     75%  {background-color: rgb(246, 246, 246, 0.25);}
-    100% {background-color: rgb(246, 246, 246, 0)}
+    100% {background-color: rgb(246, 246, 246, 0); display: none;}
 }
 
 .menu--dish-type__curtain4 {
@@ -769,7 +776,7 @@ html .loader {
     25%  {background-color: rgb(246, 246, 246, 0.75);}
     50%  {background-color: rgb(246, 246, 246, 0.5);}
     75%  {background-color: rgb(246, 246, 246, 0.25);}
-    100% {background-color: rgb(246, 246, 246, 0)}
+    100% {background-color: rgb(246, 246, 246, 0); display: none;}
 }
 
 .menu--dish-type h3 {
@@ -807,9 +814,11 @@ html .loader {
 
 .menu--dish-type menu li label span {
     /* mettre le prix sur la 2ème ligne*/
+    /* align-content: end; */
     display: flex;
     flex-wrap: wrap;
-    align-content: end;
+    align-self: center;
+    margin-top: 20px;
 } 
 
 .menu--dish-type menu li label {
@@ -818,14 +827,24 @@ html .loader {
     justify-content: space-between;
     /* width: 83.33%; */
     width: 100%;
+    height: 100%;
     padding: 0 15px;
-    /*^ pour l'effet slide sur le click */
     flex-wrap: nowrap;
+    align-items: center;
 }
 
 .menu--dish-type menu li:hover, .menu--dish-type menu li label:hover {
     cursor: pointer;
     /* background-color: purple; */
+}
+
+.menu--dish-type .dish-info h4 {
+    font-family: var(--text);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+    /* letter-spacing: 0em;
+    text-align: left; */
 }
 
 .info-and-price {

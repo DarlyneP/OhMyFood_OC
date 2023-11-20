@@ -25,3 +25,4 @@ Sinon superposer 2 icones & utiliser l'oapcité
 - [Keyframes](https://developer.mozilla.org/fr/docs/Web/CSS/@keyframes)
 - [backgroun-image not showing](https://stackoverflow.com/questions/52051516/css-background-image-is-not-showing)
 - [Changer un propriété graduellement lors d'une animation](https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation2)
+- [Faire un lien html mailto](https://www.e-monsite.com/pages/tutoriels/configuration-avancee-du-site/comment-faire-un-lien-mailto.html)
