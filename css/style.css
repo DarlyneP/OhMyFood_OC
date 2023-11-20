@@ -306,6 +306,7 @@ header img {
     background: url(../images/icons/Liked-tsp.png);
     background-repeat: no-repeat;
     background-size: contain;
+    transition: all 1s ease-in-out;
 }
 
 /** heart*/
@@ -694,6 +695,7 @@ html .loader {
     background: url(../images/icons/Liked-tsp.png);
     background-repeat: no-repeat;
     background-size: contain;
+    transition: all 1s ease-in-out;
 }
 
 .menu--section {
