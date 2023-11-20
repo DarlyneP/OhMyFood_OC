@@ -169,6 +169,12 @@ header img {
     color: #fff;
 }
 
+.info button:hover {
+    cursor: pointer;
+    background: linear-gradient(360deg, rgb(147, 86, 220, 0.7), rgb(219, 110, 218, 0.7));
+    box-shadow: 6px 5px 9px rgb(102, 51, 153, 0.6);
+}
+
 .info, .fonctionnement {
     text-align: center;
 
@@ -921,6 +927,8 @@ html .loader {
 
 .menu--section button:hover {
     cursor: pointer;
+    background: linear-gradient(360deg, rgb(147, 86, 220, 0.7), rgb(219, 110, 218, 0.7));
+    box-shadow: 6px 5px 9px rgb(102, 51, 153, 0.6);
 }
 
 /** MEDIA QUERIES -- RESTAURANTS */
