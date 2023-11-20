@@ -814,15 +814,6 @@ html .loader {
     align-items: center;
 }
 
-.menu--dish-type menu li label span {
-    /* mettre le prix sur la 2ème ligne*/
-    /* align-content: end; */
-    display: flex;
-    flex-wrap: wrap;
-    align-self: center;
-    margin-top: 20px;
-} 
-
 .menu--dish-type menu li label {
     display: flex;
     flex-direction: row;
@@ -834,6 +825,22 @@ html .loader {
     flex-wrap: nowrap;
     align-items: center;
 }
+
+.menu--dish-type menu li label p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 230px;
+}
+
+.menu--dish-type menu li label span {
+    /* mettre le prix sur la 2ème ligne*/
+    /* align-content: end; */
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    margin-top: 20px;
+} 
 
 .menu--dish-type menu li:hover, .menu--dish-type menu li label:hover {
     cursor: pointer;
@@ -967,6 +974,10 @@ html .loader {
         width: 75%;
         max-width: 605px;
     } */
+
+    .menu--dish-type menu li label p {
+        max-width: 280px;
+    }
 
 }
 
