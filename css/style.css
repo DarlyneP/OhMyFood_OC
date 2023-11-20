@@ -482,7 +482,7 @@ footer ul li:first-of-type, footer ul li:nth-of-type(2) {
     height: 0vh;
 } */
 html .loader {
-    animation-duration: 6s;
+    animation-duration: 3s;
     animation-name: sliding-vertically;
     animation-fill-mode: forwards; /**empêche l'animation de s'annuler*/
 }
@@ -654,10 +654,33 @@ html .loader {
 .title--section { /*! ne marche pas avec le sélécteur "hgroup .title--section" */
     font-family: var(--titles);
     width: 100%;
+    display: flex;
+    justify-content: center;
     text-align: center;
     padding-top: 32px;
     font-size: 28px;
     line-height: 40.82px;
+}
+
+.title--section h1 {
+    margin-left: -55px;
+}
+
+.title--section .resto-card__like {
+    position: relative;
+    top: 9px;
+    left: 42px;
+    width: 22px;
+    height: 21px;
+    background: url(../images/icons/Like-tsp.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.title--section .resto-card__like:hover {
+    background: url(../images/icons/Liked-tsp.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .menu--section {
