@@ -283,17 +283,28 @@ header img {
 
 .resto-card__bottom .resto-card__like {
     margin-right: 5%;
-    width: 9%;
-    height: 50%;
+    width: 5%;
+    height: 30%;
     position: relative;
+    top: 25px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    background: url(../images/icons/Like-tsp.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.resto-card__bottom .resto-card__like:hover {
+    background: url(../images/icons/Liked-tsp.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 /** heart*/
 
+/*main version*/
 .heart--center-bottom {
     position: relative;
     top: 6px;
@@ -353,6 +364,7 @@ header img {
 .resto-card__bottom .resto-card__like:hover .heart--center-bottom, .resto-card__bottom .resto-card__like:hover .heart--top-left, .resto-card__bottom .resto-card__like:hover .heart--top-right {
     background-color: #9356dc;
 }
+/* end of main version*/
 
 /*
 Possible changes for the heart
