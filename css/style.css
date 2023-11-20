@@ -689,6 +689,83 @@ html .loader {
     max-width: 634px;
 }
 
+.menu--dish-type {
+    position: relative;
+    /* height: 261px; */
+    height: fit-content;
+}
+
+.curtain {
+    position: absolute;
+    /* height: 28%; */ /*! quand il n'y a pas de height définie sur menu--section*/
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    z-index: 10;
+    background-color:rgb(246, 246, 246, 1);
+}
+
+/** Note : nth-of-type ne marche pas donc les curtains seront directement numérotés */
+
+.menu--dish-type__curtain1 {
+    animation-name: curtain1;
+    animation-duration: 1.7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes curtain1 {
+    0%   {background-color: rgb(246, 246, 246, 1);}
+    25%  {background-color: rgb(246, 246, 246, 0.75);}
+    50%  {background-color: rgb(246, 246, 246, 0.5);}
+    75%  {background-color: rgb(246, 246, 246, 0.25);}
+    100% {background-color: rgb(246, 246, 246, 0)}
+}
+.menu--dish-type__curtain2 {
+    animation-name: curtain2;
+    animation-duration: 2.4s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    /* background-color: green; */
+}
+
+@keyframes curtain2 {
+    0%   {background-color: rgb(246, 246, 246, 1);}
+    25%  {background-color: rgb(246, 246, 246, 0.75);}
+    50%  {background-color: rgb(246, 246, 246, 0.5);}
+    75%  {background-color: rgb(246, 246, 246, 0.25);}
+    100% {background-color: rgb(246, 246, 246, 0)}
+}
+
+.menu--dish-type__curtain3 {
+    animation-name: curtain3;
+    animation-duration: 2.8s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes curtain3 {
+    0%   {background-color: rgb(246, 246, 246, 1);}
+    25%  {background-color: rgb(246, 246, 246, 0.75);}
+    50%  {background-color: rgb(246, 246, 246, 0.5);}
+    75%  {background-color: rgb(246, 246, 246, 0.25);}
+    100% {background-color: rgb(246, 246, 246, 0)}
+}
+
+.menu--dish-type__curtain4 {
+    animation-name: curtain4;
+    animation-duration: 3.1s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes curtain4 {
+    0%   {background-color: rgb(246, 246, 246, 1);}
+    25%  {background-color: rgb(246, 246, 246, 0.75);}
+    50%  {background-color: rgb(246, 246, 246, 0.5);}
+    75%  {background-color: rgb(246, 246, 246, 0.25);}
+    100% {background-color: rgb(246, 246, 246, 0)}
+}
+
 .menu--dish-type h3 {
     margin-top: 40px;
 }

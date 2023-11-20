@@ -23,3 +23,5 @@ Sinon superposer 2 icones & utiliser l'oapcité
 - [Animation-name](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name)
 - [Maintenir les animations sans qu'elles s'annulent](https://stackoverflow.com/questions/18457462/css3-animation-keep-reverting-to-original-state)
 - [Keyframes](https://developer.mozilla.org/fr/docs/Web/CSS/@keyframes)
+- [backgroun-image not showing](https://stackoverflow.com/questions/52051516/css-background-image-is-not-showing)
+- [Changer un propriété graduellement lors d'une animation](https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation2)
