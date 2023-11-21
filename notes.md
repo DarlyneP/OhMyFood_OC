@@ -23,7 +23,19 @@ Sinon superposer 2 icones & utiliser l'oapcité
 - [Animation-name](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name)
 - [Maintenir les animations sans qu'elles s'annulent](https://stackoverflow.com/questions/18457462/css3-animation-keep-reverting-to-original-state)
 - [Keyframes](https://developer.mozilla.org/fr/docs/Web/CSS/@keyframes)
+
+## Autres
 - [backgroun-image not showing](https://stackoverflow.com/questions/52051516/css-background-image-is-not-showing)
 - [Changer un propriété graduellement lors d'une animation](https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation2)
 - [Faire un lien html mailto](https://www.e-monsite.com/pages/tutoriels/configuration-avancee-du-site/comment-faire-un-lien-mailto.html)
 - [Animations CSS bases](https://www.w3schools.com/css/css3_animations.asp)
+- [Text-overflow](https://developer.mozilla.org/fr/docs/Web/CSS/text-overflow)
+- [Transition](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
+- [:active vs :focus](https://stackoverflow.com/questions/1677990/what-is-the-difference-between-focus-and-active)
+
+## Compiler SASS avec Node
+```sh
+#1 npm i node-sass --save-dev
+#2 npx node-sass sass/styles.scss css/styles.css
+
+#tip : utiliser des couleurs rgba pour compiler les valeurs avec opacité (4 données au lieu de 3)

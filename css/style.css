@@ -689,13 +689,14 @@ html .loader {
     background: url(../images/icons/Like-tsp.png);
     background-repeat: no-repeat;
     background-size: contain;
+    transition: all 1s ease-in-out;
 }
 
 .title--section .resto-card__like:hover {
     background: url(../images/icons/Liked-tsp.png);
     background-repeat: no-repeat;
+    /*doît êtr présent sur le hover aussi sinon l'icône ne s'affiche pas*/
     background-size: contain;
-    transition: all 1s ease-in-out;
 }
 
 .menu--section {
@@ -868,11 +869,12 @@ html .loader {
    /* display: none; */
    height: inherit;
    border-radius: 0 15px 15px 0;
-   transition: width 3s;
+   transition: width 0.5s;
    text-align: center;
    position: relative;
 }
 
+/*& Mettre en évidence l'encart vert*/
 /*! :active dure le temps de l'action, remplacement de :active par :focus à la place (:checked inneficace ici) */
 /*! edit => :focus ne fonctionne pas, essai avec :target — en plus :focus ne peut être désactivé qu'en cliquant à côté et non en recliquant sur l'élément */
 /*! edit => :target ne fonctionne pas */
@@ -891,19 +893,32 @@ html .loader {
 {
     display: initial;
     /* margin-left: -30px; */
-    width: 17%;
+    width: 25%;
     /* content: '<i class="fa-solid fa-circle-check"></i>'; */
-    content: '\<i class="fa-solid fa-circle-check"></i>';
+    /* content: '\<i class="fa-solid fa-circle-check"></i>'; */
     /* content: 'ok'; */
 }
 
-#check-1::before {
+/*& Insertion de la pastille check*/
+#check-1::before, #check-2::before, #check-3::before, #check-4::before, #check-5::before, #check-6::before,
+#check-7::before, #check-8::before, #check-9::before, #check-10::before {
     /* width: 100%;
     height: 100%;
     margin: 40%; */
     /* margin-top: 50%; */
+
+    content: url(../images/icons/check.svg); /*! meilleure syntaxe*/
+    /* content: ''; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 40%;
+    left: 0%; /*! for some strange reason 0% is the only way to center, else it won't go left enough or it will even go right even though this doesn't make sense at all.*/
+    opacity: 0;
+    transition: opacity 0.4s;
 }
 
+/*& Mettre en évidence l'icône check*/
 .menu--dish-type menu li label:hover + #check-1::before, 
 .menu--dish-type menu li label:hover + #check-2::before, 
 .menu--dish-type menu li label:hover + #check-3::before,
@@ -916,21 +931,24 @@ html .loader {
 .menu--dish-type menu li label:hover + #check-10::before
 {
     /* content: '<i class="fa-solid fa-circle-check"></i>'; */
-    content: url(../images/icons/check.svg);
-    /* transition: content 3s; */
-    width: 100%;
-    height: 100%;
+    opacity: 1;
     /* margin: 40%; */
-    position: absolute;
-    top: 40%;
-    left: 0%; /*! for some strange reason 0% is the only way to center, else it won't go left enough or it will even go right even though this doesn't make sense at all.*/
+
     /* left: 70%; */
     /* transform: translateY(-50%); */
   
     /* align-self: center; */
     /* padding: 5px;
     margin: 10px; */
+    /* animation-name: check;
+    animation-delay: 0.4s; */
 }
+
+/* @keyframes check {
+    0% {content: '';}
+    60% {content: url(../images/icons/check.svg);}
+    /* 60% {content: 'ok';} */
+} */
 
 /* #check-1:checked + label .check {
     display: initial;
@@ -1007,6 +1025,23 @@ html .loader {
         margin: 0 auto;
         width: 75%;
     } */
+
+    .menu--dish-type menu li:hover + #check-1, .menu--dish-type menu li label:hover + #check-1,
+    .menu--dish-type menu li:hover + #check-2, .menu--dish-type menu li label:hover + #check-2,
+    .menu--dish-type menu li:hover + #check-3, .menu--dish-type menu li label:hover + #check-3,
+    .menu--dish-type menu li:hover + #check-4, .menu--dish-type menu li label:hover + #check-4,
+    .menu--dish-type menu li:hover + #check-5, .menu--dish-type menu li label:hover + #check-5,
+    .menu--dish-type menu li:hover + #check-6, .menu--dish-type menu li label:hover + #check-6,
+    .menu--dish-type menu li:hover + #check-7, .menu--dish-type menu li label:hover + #check-7,
+    .menu--dish-type menu li:hover + #check-8, .menu--dish-type menu li label:hover + #check-8,
+    .menu--dish-type menu li:hover + #check-9, .menu--dish-type menu li label:hover + #check-9,
+    .menu--dish-type menu li:hover + #check-10, .menu--dish-type menu li label:hover + #check-10
+    /*! doit être remplacé en active / click après avoir validé avec hover */ 
+    {
+        width: 17%;
+        /* content: '<i class="fa-solid fa-circle-check"></i>'; */
+        /* content: 'ok'; */
+    }
 }
 
 /*^ for screens above 768px -- or 937?(desktop) */

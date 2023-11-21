@@ -1,0 +1,694 @@
+@charset "UTF-8";
+/** RESET CSS*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/** VARIABLES */
+body {
+  font-family: var(--text);
+  /* couleurs */
+  --purple: #9356dc;
+  --light-purple: #db6eda;
+  --dark-green: #028766;
+  --light-green: #99e2d0;
+  --dark-blue: #003a68;
+  --light-blue: #89c9fa;
+  --dk-background: #eaeaea;
+  --main-background: #f6f6f6;
+  /* fonts */
+  --text: 'Roboto', sans-serif;
+  --titles: 'Shrikhand', serif;
+  /* dimensions */
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  box-sizing: border-box; }
+
+/** ICONS */
+.fa-location-dot {
+  color: #353535; }
+
+.fa-handshake-angle, .fa-utensils, .fa-circle-check {
+  color: #ffffff; }
+
+.fa-location-dot {
+  margin-right: 17px; }
+
+.fa-handshake-angle, .fa-utensils {
+  margin-right: 10px; }
+
+.fa-circle-check {
+  display: none; }
+
+.fa-arrow-left {
+  position: absolute;
+  color: black;
+  top: 25px;
+  left: 17px; }
+
+.fa-mobile-screen-button, .fa-store, .fa-list {
+  padding-right: 20px; }
+
+/**/
+/** -- PAGE -- */
+/** LOADER */
+.loader {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background: linear-gradient(var(--purple), var(--light-purple));
+  animation-duration: 3s;
+  animation-name: sliding-vertically;
+  animation-fill-mode: forwards;
+  /**empêche l'animation de s'annuler*/ }
+
+@keyframes sliding-vertically {
+  from {
+    height: 100vh; }
+  to {
+    height: 0vh;
+    display: none; } }
+
+/**/
+header {
+  width: 100%; }
+  header .logo {
+    width: 100%;
+    height: 63px;
+    text-align: center; }
+  header img {
+    width: 197px;
+    padding-top: 15px; }
+
+.location {
+  padding: 20px 0; }
+
+.location, .restaurants {
+  background-color: var(--dk-background);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%; }
+
+.info {
+  background-color: var(--main-background); }
+  .info button {
+    border: none;
+    height: 50px;
+    width: 218px;
+    border-radius: 30px;
+    background: linear-gradient(360deg, var(--purple), var(--light-purple));
+    margin-top: 35px;
+    margin-bottom: 45px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18.75px;
+    color: #fff; }
+  .info button:hover {
+    cursor: pointer;
+    background: linear-gradient(360deg, rgba(147, 86, 220, 0.7), rgba(219, 110, 218, 0.7));
+    box-shadow: 6px 5px 9px rgba(102, 51, 153, 0.6); }
+
+.info--title {
+  padding-top: 35px;
+  padding-bottom: 20px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28.13px; }
+
+.info--description {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21.09px; }
+
+.info, .fonctionnement {
+  text-align: center; }
+
+.fonctionnement {
+  padding-bottom: 40px; }
+
+.fonctionnement h2, .restaurants h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28.13px; }
+
+.fonctionnement h2 {
+  text-align: initial;
+  margin: 40px 0 0 15px; }
+
+.step .step--number {
+  /* background: linear-gradient(360deg, var(--purple), var(--light-purple)); */
+  background-color: var(--purple);
+  border-radius: 50%;
+  color: #fff;
+  /* "the display inline property prevents width & height from having an effect"
+        width: 15px;
+        height: 15px;
+        so I replaced them with a padding : */
+  padding: 3px 8px;
+  position: absolute;
+  left: -10px; }
+
+.step p {
+  background-color: var(--dk-background);
+  padding: 25px;
+  margin: 20px;
+  border-radius: 10px;
+  position: relative;
+  /* box-shadow instructions : x=0 , y=4, blur=15, spread=0, color=#000000 15 . */
+  box-shadow: 0px 4px 15px #0000002a; }
+
+.restaurants {
+  flex-direction: column;
+  flex-wrap: wrap; }
+  .restaurants a {
+    width: 93%;
+    /* width: 340px; */
+    text-decoration: none;
+    color: black;
+    align-self: center;
+    height: 251px;
+    padding-bottom: 18px; }
+
+.resto--title {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  margin-left: 15px; }
+
+.resto--cards {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center; }
+
+.resto-card {
+  background-color: var(--main-background);
+  border-radius: 9px;
+  height: 251px;
+  width: 100%; }
+  .resto-card img {
+    width: 100%;
+    height: 70%;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px; }
+
+.resto-card__bottom {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row; }
+  .resto-card__bottom .resto-card__details {
+    width: 80%;
+    padding: 20px; }
+    .resto-card__bottom .resto-card__details h3 {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 21.09px; }
+    .resto-card__bottom .resto-card__details p {
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 19.92px; }
+  .resto-card__bottom .resto-card__like {
+    margin-right: 5%;
+    width: 5%;
+    height: 30%;
+    position: relative;
+    top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: url(../images/icons/Like-tsp.png);
+    background-repeat: no-repeat;
+    background-size: contain; }
+  .resto-card__bottom .resto-card__like:hover {
+    background: url(../images/icons/Liked-tsp.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: all 1s ease-in-out; }
+
+/** heart*/
+/**/
+footer {
+  background-color: #353535;
+  color: #fff;
+  padding: 22px 25px; }
+  footer ul li {
+    margin-bottom: 7px;
+    font-size: 16px;
+    line-height: 18.75px; }
+    footer ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      line-height: 18.75px; }
+  footer ul li:first-of-type, footer ul li:nth-of-type(2) {
+    font-weight: 500; }
+
+.footer--title {
+  font-family: var(--titles);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26.24px;
+  color: white;
+  margin-bottom: 16px; }
+
+.container {
+  width: 100vw;
+  height: 100vh; }
+
+/** MEDIA QUERIES -- HOMEPAGE */
+/*^ for screens between 425px & 768px */
+@media screen and (min-width: 425px) {
+  .fonctionnement, .restaurants {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .fonctionnement h2 {
+    margin: 50px 216px 0 0px; }
+  .steps {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: center; }
+  .step {
+    width: 400px; }
+  /*.restaurants h2*/
+  .resto--title {
+    margin: 50px 230px 25px 0px;
+    /* margin-right: 216px; */ }
+  .restaurants a {
+    width: 340px; } }
+
+/*^ for screens above 768px -- or 937?(desktop) */
+@media screen and (min-width: 937px) {
+  .fonctionnement {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-top: 50px; }
+    .fonctionnement h2 {
+      margin: 0;
+      /** On enlève la margin afin de pouvoir centrer, et on met un padding-top sur fonctionnement à la place */ }
+  .fonctionnement h2, .steps {
+    width: 100%; }
+  .steps {
+    display: flex;
+    flex-direction: row; }
+  .step {
+    width: 33%;
+    /* max-width: 322px; */ }
+  .restaurants {
+    display: flex;
+    flex-direction: column; }
+    .restaurants a {
+      width: 44.37%;
+      max-width: 490px;
+      margin-bottom: 50px; }
+    .restaurants a:nth-of-type(odd) {
+      margin-right: 100px; }
+  .restaurants--wrapper {
+    margin: 0 auto;
+    max-width: 1080px; }
+  .resto--title {
+    margin: 50px 0px 25px 0px;
+    align-self: flex-start; }
+  .resto--cards {
+    max-width: 1080px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; }
+  footer {
+    display: flex;
+    flex-direction: row-reverse; }
+    footer ul {
+      display: inline; }
+  .footer--title {
+    margin-top: 27px;
+    margin-bottom: 0px; } }
+
+/** -- RESTAURANTS -- */
+.menu--top__banner {
+  /* width: 375px; */
+  width: 100%;
+  height: 275px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -65px; }
+  .menu--top__banner img {
+    height: 100%;
+    width: 100%;
+    z-index: 1; }
+
+.menu--bottom__contents {
+  background-color: var(--main-background);
+  /* width: 375px; */
+  /* Utilisation de max-width pour éviter les problèmes de dimensionement sur petits écrans (320px) */
+  max-width: 375px;
+  margin: 0 auto;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+  position: relative;
+  z-index: 10; }
+
+.title--section {
+  /*! ne marche pas avec le sélécteur "hgroup .title--section" */
+  font-family: var(--titles);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 32px;
+  font-size: 28px;
+  line-height: 40.82px; }
+  .title--section h1 {
+    margin-left: -55px; }
+  .title--section .resto-card__like {
+    position: relative;
+    top: 9px;
+    left: 42px;
+    width: 22px;
+    height: 21px;
+    background: url(../images/icons/Like-tsp.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: all 1s ease-in-out; }
+  .title--section .resto-card__like:hover {
+    background: url(../images/icons/Liked-tsp.png);
+    background-repeat: no-repeat;
+    /*doît êtr présent sur le hover aussi sinon l'icône ne s'affiche pas*/
+    background-size: contain; }
+
+.menu--section {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 634px; }
+
+.menu--dish-type {
+  position: relative;
+  height: fit-content; }
+  .menu--dish-type h3 {
+    margin-top: 40px; }
+  .menu--dish-type h3::after {
+    content: "";
+    display: block;
+    width: 38px;
+    height: 2px;
+    background: var(--light-green); }
+  .menu--dish-type menu li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin-top: 12px;
+    border-radius: 15px;
+    height: 69px;
+    align-items: center; }
+  .menu--dish-type menu li label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* width: 83.33%; */
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    flex-wrap: nowrap;
+    align-items: center; }
+  .menu--dish-type menu li label p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 230px; }
+  .menu--dish-type menu li label span {
+    /* mettre le prix sur la 2ème ligne quand la width de LABEL n'est pas égale à 100%*/
+    /* align-content: end; */
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    margin-top: 20px; }
+  .menu--dish-type menu li:hover, .menu--dish-type menu li label:hover {
+    cursor: pointer; }
+  .menu--dish-type .dish-info h4 {
+    font-family: var(--text);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px; }
+
+.curtain {
+  position: absolute;
+  /* height: 28%; */
+  /*! quand il n'y a pas de height définie sur menu--section*/
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  z-index: 10;
+  background-color: #f6f6f6; }
+
+/** Note : nth-of-type ne marche pas donc les curtains seront directement numérotés */
+.menu--dish-type__curtain1 {
+  animation-name: curtain1;
+  animation-duration: 1.7s;
+  animation-fill-mode: forwards; }
+
+@keyframes curtain1 {
+  0% {
+    background-color: #f6f6f6; }
+  25% {
+    background-color: rgba(246, 246, 246, 0.75); }
+  50% {
+    background-color: rgba(246, 246, 246, 0.5); }
+  75% {
+    background-color: rgba(246, 246, 246, 0.25); }
+  100% {
+    background-color: rgba(246, 246, 246, 0);
+    display: none; } }
+
+.menu--dish-type__curtain2 {
+  animation-name: curtain2;
+  animation-duration: 2.4s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards; }
+
+@keyframes curtain2 {
+  0% {
+    background-color: #f6f6f6; }
+  25% {
+    background-color: rgba(246, 246, 246, 0.75); }
+  50% {
+    background-color: rgba(246, 246, 246, 0.5); }
+  75% {
+    background-color: rgba(246, 246, 246, 0.25); }
+  100% {
+    background-color: rgba(246, 246, 246, 0);
+    display: none; } }
+
+.menu--dish-type__curtain3 {
+  animation-name: curtain3;
+  animation-duration: 2.8s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards; }
+
+@keyframes curtain3 {
+  0% {
+    background-color: #f6f6f6; }
+  25% {
+    background-color: rgba(246, 246, 246, 0.75); }
+  50% {
+    background-color: rgba(246, 246, 246, 0.5); }
+  75% {
+    background-color: rgba(246, 246, 246, 0.25); }
+  100% {
+    background-color: rgba(246, 246, 246, 0);
+    display: none; } }
+
+.menu--dish-type__curtain4 {
+  animation-name: curtain4;
+  animation-duration: 3.1s;
+  animation-delay: 6s;
+  animation-fill-mode: forwards; }
+
+@keyframes curtain4 {
+  0% {
+    background-color: #f6f6f6; }
+  25% {
+    background-color: rgba(246, 246, 246, 0.75); }
+  50% {
+    background-color: rgba(246, 246, 246, 0.5); }
+  75% {
+    background-color: rgba(246, 246, 246, 0.25); }
+  100% {
+    background-color: rgba(246, 246, 246, 0);
+    display: none; } }
+
+.info-and-price {
+  display: flex;
+  justify-content: space-between; }
+
+#check-1, #check-2, #check-3, #check-4, #check-5, #check-6, #check-7, #check-8, #check-9, #check-10 {
+  width: 0;
+  background-color: #99e2d0;
+  height: inherit;
+  border-radius: 0 15px 15px 0;
+  transition: width 0.5s;
+  text-align: center;
+  position: relative; }
+
+/*& Mettre en évidence l'encart vert*/
+/*! :active dure le temps de l'action, remplacement de :active par :focus à la place (:checked inneficace ici) */
+/*! edit => :focus ne fonctionne pas, essai avec :target — en plus :focus ne peut être désactivé qu'en cliquant à côté et non en recliquant sur l'élément */
+/*! edit => :target ne fonctionne pas */
+/*^ On peut enlever "menu--dish-type menu li:target + #check-1" dans la css rule suivante en mettant un height de 100% & un align-self center sur le label ainsi qu'un padding-bottom de 19px sur le span du prix.*/
+.menu--dish-type menu li:hover + #check-1, .menu--dish-type menu li label:hover + #check-1,
+.menu--dish-type menu li:hover + #check-2, .menu--dish-type menu li label:hover + #check-2,
+.menu--dish-type menu li:hover + #check-3, .menu--dish-type menu li label:hover + #check-3,
+.menu--dish-type menu li:hover + #check-4, .menu--dish-type menu li label:hover + #check-4,
+.menu--dish-type menu li:hover + #check-5, .menu--dish-type menu li label:hover + #check-5,
+.menu--dish-type menu li:hover + #check-6, .menu--dish-type menu li label:hover + #check-6,
+.menu--dish-type menu li:hover + #check-7, .menu--dish-type menu li label:hover + #check-7,
+.menu--dish-type menu li:hover + #check-8, .menu--dish-type menu li label:hover + #check-8,
+.menu--dish-type menu li:hover + #check-9, .menu--dish-type menu li label:hover + #check-9,
+.menu--dish-type menu li:hover + #check-10, .menu--dish-type menu li label:hover + #check-10 {
+  display: initial;
+  /* margin-left: -30px; */
+  width: 25%; }
+
+/*& Insertion de la pastille check*/
+#check-1::before, #check-2::before, #check-3::before, #check-4::before, #check-5::before, #check-6::before,
+#check-7::before, #check-8::before, #check-9::before, #check-10::before {
+  content: url(../images/icons/check.svg);
+  /*! meilleure syntaxe*/
+  /* content: ''; */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 40%;
+  left: 0%;
+  /*! for some strange reason 0% is the only way to center, else it won't go left enough or it will even go right even though this doesn't make sense at all.*/
+  opacity: 0;
+  transition: opacity 0.4s; }
+
+/*& Mettre en évidence l'icône check*/
+.menu--dish-type menu li label:hover + #check-1::before,
+.menu--dish-type menu li label:hover + #check-2::before,
+.menu--dish-type menu li label:hover + #check-3::before,
+.menu--dish-type menu li label:hover + #check-4::before,
+.menu--dish-type menu li label:hover + #check-5::before,
+.menu--dish-type menu li label:hover + #check-6::before,
+.menu--dish-type menu li label:hover + #check-7::before,
+.menu--dish-type menu li label:hover + #check-8::before,
+.menu--dish-type menu li label:hover + #check-9::before,
+.menu--dish-type menu li label:hover + #check-10::before {
+  opacity: 1; }
+
+.menu--order {
+  width: 100%;
+  text-align: center; }
+
+.menu--section button {
+  background: linear-gradient(360deg, var(--purple), var(--light-purple));
+  border-radius: 34px;
+  border: none;
+  padding: 15px 35px;
+  margin: 40px;
+  color: white;
+  font-family: var(--text);
+  font-weight: 500; }
+
+.menu--section button:hover {
+  cursor: pointer;
+  background: linear-gradient(360deg, rgba(147, 86, 220, 0.7), rgba(219, 110, 218, 0.7));
+  box-shadow: 6px 5px 9px rgba(102, 51, 153, 0.6); }
+
+/** MEDIA QUERIES -- RESTAURANTS */
+/*^ for screens between 425px & 768px */
+@media screen and (min-width: 425px) {
+  .menu--dish-type menu li label p {
+    max-width: 280px; } }
+
+/** additionnal media query */
+@media screen and (min-width: 500px) and (max-width: 600px) {
+  .menu--section {
+    margin: 0 auto;
+    max-width: 605px; } }
+
+@media screen and (min-width: 500px) {
+  .menu--bottom__contents {
+    width: 73.26%;
+    max-width: none; } }
+
+@media screen and (min-width: 768px) {
+  .menu--dish-type menu li:hover + #check-1, .menu--dish-type menu li label:hover + #check-1,
+  .menu--dish-type menu li:hover + #check-2, .menu--dish-type menu li label:hover + #check-2,
+  .menu--dish-type menu li:hover + #check-3, .menu--dish-type menu li label:hover + #check-3,
+  .menu--dish-type menu li:hover + #check-4, .menu--dish-type menu li label:hover + #check-4,
+  .menu--dish-type menu li:hover + #check-5, .menu--dish-type menu li label:hover + #check-5,
+  .menu--dish-type menu li:hover + #check-6, .menu--dish-type menu li label:hover + #check-6,
+  .menu--dish-type menu li:hover + #check-7, .menu--dish-type menu li label:hover + #check-7,
+  .menu--dish-type menu li:hover + #check-8, .menu--dish-type menu li label:hover + #check-8,
+  .menu--dish-type menu li:hover + #check-9, .menu--dish-type menu li label:hover + #check-9,
+  .menu--dish-type menu li:hover + #check-10, .menu--dish-type menu li label:hover + #check-10 {
+    width: 17%; } }
+
+/*^ for screens above 768px -- or 937?(desktop) */
+@media screen and (min-width: 937px) {
+  .title--section {
+    padding-top: 51px; }
+  .menu--dish-type menu li {
+    width: 100%; }
+  .menu--bottom__contents {
+    max-width: 1055px; }
+  footer ul {
+    display: flex;
+    padding: 30px 25px; }
+    footer ul li {
+      margin-right: 10px; }
+    footer ul li:nth-of-type(2), footer ul li:nth-of-type(4) {
+      margin-right: 45px; } }
