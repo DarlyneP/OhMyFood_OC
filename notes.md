@@ -31,11 +31,18 @@ Sinon superposer 2 icones & utiliser l'oapcité
 - [Animations CSS bases](https://www.w3schools.com/css/css3_animations.asp)
 - [Text-overflow](https://developer.mozilla.org/fr/docs/Web/CSS/text-overflow)
 - [Transition](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
+- [Transitions 2](https://www.w3schools.com/css/css3_transitions.asp)
 - [:active vs :focus](https://stackoverflow.com/questions/1677990/what-is-the-difference-between-focus-and-active)
 
 ## Compiler SASS avec Node
+[Solution](https://stackoverflow.com/questions/31448114/how-to-compile-or-convert-sass-scss-to-css-with-node-sass-no-ruby)
 ```sh
 #1 npm i node-sass --save-dev
 #2 npx node-sass sass/styles.scss css/styles.css
 
 #tip : utiliser des couleurs rgba pour compiler les valeurs avec opacité (4 données au lieu de 3)
+```
+[wrong number of arguments (4 for 3) for `rgb' issue in css.scss file in rails 3.2.13](https://stackoverflow.com/questions/16581791/wrong-number-of-arguments-4-for-3-for-rgb-issue-in-css-scss-file-in-rails-3)
+
+## Github Pages
+- [Les Images ne s'affichent pas sur le site Github pages](https://stackoverflow.com/questions/41468951/images-not-displaying-in-github-pages)
