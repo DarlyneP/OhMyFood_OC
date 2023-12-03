@@ -466,15 +466,13 @@ footer {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    /* background-color: red */
     max-width: 230px; }
-    .menu--dish-type menu li:hover {
-      background-color: red;
-    }
-  body:has(.menu--dish-type menu li:hover) .menu--dish-type menu li label p, body:has(.menu--dish-type menu li label:hover) .menu--dish-type menu li label p {
-    text-overflow: unset;
-    color:#9356dc;
-    max-width: fit-content; }
+  .menu--dish-type menu li label p:hover {
+    text-overflow: unset !important;
+    max-width: fit-content !important; }
+  .menu--dish-type menu li:hover + .menu--dish-type menu li label p {
+    text-overflow: unset !important;
+    max-width: fit-content !important; }
   .menu--dish-type menu li label span {
     /* mettre le prix sur la 2ème ligne quand la width de LABEL n'est pas égale à 100%*/
     /* align-content: end; */

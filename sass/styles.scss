@@ -590,9 +590,13 @@ footer {
         overflow: hidden;
         max-width: 230px;
     }
-    menu li:hover + menu li label p {
-        text-overflow: unset;
-        max-width: fit-content;
+    menu li label p:hover {
+        text-overflow: unset !important;
+        max-width: fit-content !important;
+    }
+    menu li:hover + .menu--dish-type menu li label p {
+        text-overflow: unset !important;
+        max-width: fit-content !important;
     }
     menu li label span {
         /* mettre le prix sur la 2ème ligne quand la width de LABEL n'est pas égale à 100%*/
